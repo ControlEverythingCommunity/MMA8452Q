@@ -2,8 +2,8 @@
 # MMA8452Q
 MMA8452Q 3-Axis Digital Accelerometer
  
-
 The MMA8452Q device, provides digital X, Y, Z-Axis Accelerometer.
+
 This Device is available from ControlEverything.com [SKU: MMA8452Q_I2CS]
 
 https://www.controleverything.com/content/Accelorometer?sku=MMA8452Q_I2CS
@@ -38,5 +38,5 @@ Download (or git pull) the code in pi. Run the program
 $> python MMA8452Q.py
 ```
 
-The code output is raw value of acceleration in X, Y and Z Axes.
+The code output is raw value of acceleration in X, Y and Z Axis.
 
