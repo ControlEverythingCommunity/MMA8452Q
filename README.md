@@ -2,7 +2,7 @@
 # MMA8452Q
 MMA8452Q 3-Axis Digital Accelerometer
  
-The MMA8452Q device, provides digital X, Y, Z-Axis Accelerometer.
+The MMA8452Q device, provides digital acceleration for X, Y and Z axis.
 
 This Device is available from ControlEverything.com [SKU: MMA8452Q_I2CS]
 
