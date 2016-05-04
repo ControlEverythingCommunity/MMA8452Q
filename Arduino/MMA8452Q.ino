@@ -1,7 +1,7 @@
 // Distributed with a free-will license.
 // Use it any way you want, profit or free, provided it fits in the licenses of its associated works.
 // MMA8452Q
-// This code is designed to work with the H3LIS331DL_I2CS I2C Mini Module available from ControlEverything.com.
+// This code is designed to work with the MMA8452Q_I2CS I2C Mini Module available from ControlEverything.com.
 // https://www.controleverything.com/content/Accelorometer?sku=MMA8452Q_I2CS#tabs-0-product_tabset-2
 
 #include <Wire.h>
@@ -49,7 +49,7 @@ void loop()
 {
   unsigned int data[7];
 
-  // Request 7 bytes of data from the device
+  // Request 7 bytes of data
   Wire.requestFrom(Addr, 7);
   
   // Read 7 bytes of data
