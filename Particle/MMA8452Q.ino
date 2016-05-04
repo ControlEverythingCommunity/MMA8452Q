@@ -1,7 +1,7 @@
 // Distributed with a free-will license.
 // Use it any way you want, profit or free, provided it fits in the licenses of its associated works.
 // MMA8452Q
-// This code is designed to work with the H3LIS331DL_I2CS I2C Mini Module available from ControlEverything.com.
+// This code is designed to work with the MMA8452Q_I2CS I2C Mini Module available from ControlEverything.com.
 // https://www.controleverything.com/content/Accelorometer?sku=MMA8452Q_I2CS#tabs-0-product_tabset-2
 
 #include <application.h>
@@ -14,7 +14,7 @@ int xAccl = 0, yAccl = 0, zAccl = 0;
 void setup()
 {
   // Set variable
-  Particle.variable("i2cdevice", "MXC6232xM");
+  Particle.variable("i2cdevice", "MMA8452Q");
   Particle.variable("xAccl", xAccl);
   Particle.variable("yAccl", yAccl);
   Particle.variable("zAccl", zAccl);
