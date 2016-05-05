@@ -43,7 +43,7 @@ void main()
 	write(file, config, 2);
 	sleep(0.5);
 
-	// Read 7 bytes of data
+	// Read 7 bytes of data(0x00)
 	// staus, xAccl msb, xAccl lsb, yAccl msb, yAccl lsb, zAccl msb, zAccl lsb
 	char reg[1] = {0x00};
 	write(file, reg, 1);
