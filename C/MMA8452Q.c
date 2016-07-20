@@ -50,7 +50,7 @@ void main()
 	char data[7] = {0};
 	if(read(file, data, 7) != 7)
 	{
-		printf("Error : Input/output Error \n");
+		printf("Error : Input/Output error \n");
 	}
 	else
 	{
