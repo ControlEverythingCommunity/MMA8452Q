@@ -18,13 +18,13 @@ namespace MMA8452Q
 	// App that reads data over I2C from a MMA8452Q, 3-Axis Digital Accelerometer
 	public sealed partial class MainPage : Page
 	{
-		private const byte ACCEL_I2C_ADDR = 0x1C;			// I2C address of the MMA8452Q
-		private const byte ACCEL_REG_CONFIG = 0x0E;			// Data Format register
+		private const byte ACCEL_I2C_ADDR = 0x1C;		// I2C address of the MMA8452Q
+		private const byte ACCEL_REG_CONFIG = 0x0E;		// Data Format register
 		private const byte ACCEL_REG_CONTROL1 = 0x2A;		// Control 1 register
-		private const byte ACCEL_REG_STAT = 0x00;			// Status data register
-		private const byte ACCEL_REG_X = 0x01;				// X Axis MSB data register
-		private const byte ACCEL_REG_Y = 0x03;				// Y Axis MSB data register
-		private const byte ACCEL_REG_Z = 0x05;				// Z Axis MSB data register
+		private const byte ACCEL_REG_STAT = 0x00;		// Status data register
+		private const byte ACCEL_REG_X = 0x01;			// X Axis MSB data register
+		private const byte ACCEL_REG_Y = 0x03;			// Y Axis MSB data register
+		private const byte ACCEL_REG_Z = 0x05;			// Z Axis MSB data register
 
 		private I2cDevice I2CAccel;
 		private Timer periodicTimer;
@@ -42,7 +42,7 @@ namespace MMA8452Q
 
 		private async void InitI2CAccel()
 		{
-			string aqs = I2cDevice.GetDeviceSelector();				// Get a selector string that will return all I2C controllers on the system
+			string aqs = I2cDevice.GetDeviceSelector();		// Get a selector string that will return all I2C controllers on the system
 			var dis = await DeviceInformation.FindAllAsync(aqs);	// Find the I2C bus controller device with our selector string
 			if (dis.Count == 0)
 			{
@@ -58,8 +58,8 @@ namespace MMA8452Q
 				Text_Status.Text = string.Format(
 					"Slave address {0} on I2C Controller {1} is currently in use by " +
 					"another application. Please ensure that no other applications are using I2C.",
-					settings.SlaveAddress,
-					dis[0].Id);
+				settings.SlaveAddress,
+				dis[0].Id);
 				return;
 			}
 
@@ -71,7 +71,7 @@ namespace MMA8452Q
 			*/
 			byte[] WriteBuf_StandCtrl1 = new byte[] { ACCEL_REG_CONTROL1, 0x00 };		// 0x00 sets SLEEP Mode Rate to 50 Hz, ODR to 800 Hz, Normal full dynamic range mode, Normal Read mode, Standby Mode
 			byte[] WriteBuf_ActiveCtrl1 = new byte[] { ACCEL_REG_CONTROL1, 0x01 };		// 0x01 sets SLEEP Mode Rate to 50 Hz, ODR to 800 Hz, Normal full dynamic range mode, Normal Read mode, Active Mode
-			byte[] WriteBuf_Config = new byte[] { ACCEL_REG_CONFIG, 0x00 };				// 0x00 disables High-Pass output data, sets Full Scale Range to 2g
+			byte[] WriteBuf_Config = new byte[] { ACCEL_REG_CONFIG, 0x00 };			// 0x00 disables High-Pass output data, sets Full Scale Range to 2g
 
 			// Write the register settings
 			try
@@ -133,7 +133,7 @@ namespace MMA8452Q
 		private Acceleration ReadI2CAccel()
 		{
 			byte[] RegAddrBuf = new byte[] { ACCEL_REG_STAT };	// Read data from the register address
-			byte[] ReadBuf = new byte[7];						// We read 7 bytes sequentially to get status and all 3 two-byte axes registers in one read
+			byte[] ReadBuf = new byte[7];				// We read 7 bytes sequentially to get status and all 3 two-byte axes registers in one read
 
 			/*
 				Read from the 3-Axis Digital Accelerometer 
@@ -175,4 +175,3 @@ namespace MMA8452Q
 		}
 	}
 }
-
