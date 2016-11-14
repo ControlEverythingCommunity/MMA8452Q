@@ -100,4 +100,13 @@ Download (or git pull) the code in Onion Omega. Run the program.
 $> python MMA8452Q.py
 ```
 
+## Windows 10 IoT Core
+ 
+To download Windows 10 IoT Core, visit Get Started page
+ 
+https://developer.microsoft.com/en-us/windows/iot/GetStarted
+ 
+Download (or git pull) the sample, make a copy on your disk and open the project from Visual Studio.
+
+Note: Your IoT Core device and development PC should be connected to same local Network.
 #####The code output is raw value of acceleration in X, Y and Z Axis.
